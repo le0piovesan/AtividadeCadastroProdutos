@@ -40,6 +40,22 @@ namespace ControleEstoque
             return produtos;
         }
 
+        public List<DtoProductList> ListProdutosNome(string text)
+        {
+            Context db = new Context();
+            List<DtoProductList> result = (from a in db.produto
+                                        where a.nome.Contains(text)
+                                        select new DtoProductList
+                                        {
+                                            id = a.id,
+                                            nome = a.nome,
+                                            quantidade = a.quantidade
+                                        }).ToList();
+
+            return result;
+        }
+
+
         internal void EditarProduto(DtoProduct p)
         {
             Context db = new Context();
@@ -58,5 +74,73 @@ namespace ControleEstoque
             db.produto.Remove(produto);
             db.SaveChanges();
         }
+
+        internal void SetEntradaProduto(DtoEntrada entrada)
+        {
+            Context db = new Context();
+            db.entrada.Add(entrada);
+            db.SaveChanges();
+
+        }
+
+        public List<DtoEntradaList> ListProdutosEntrada()
+        {
+            Context db = new Context();
+
+            List<DtoEntradaList> result = (from e in db.entrada
+                                           select new DtoEntradaList
+                                           {
+                                              idproduto = e.idproduto,
+                                              qteproduto = e.qteproduto,
+                                              dtcompra = e.dtcompra,
+                                              vlrcustoproduto = e.vlrcustoproduto,
+                                              vlrtotalproduto = e.vlrtotalproduto 
+                                           }).ToList();
+
+            return result;
+        }
+
+        internal DtoEntrada GetEntrada(int id)
+        {
+            Context db = new Context();
+            DtoEntrada entrada = db.entrada.FirstOrDefault(o => o.idproduto == id);
+
+            return entrada;
+        }
+
+        internal void EditarEntradaVenda(DtoEntrada e)
+        {
+            Context db = new Context();
+            DtoEntrada entrada = db.entrada.FirstOrDefault(o => o.idproduto == o.idproduto);
+            entrada.qteproduto = e.qteproduto;
+           
+            db.SaveChanges();
+        }
+
+        internal void SetSaidaProduto(DtoSaida saida)
+        {
+            Context db = new Context();
+            db.saida.Add(saida);
+            db.SaveChanges();
+
+        }
+
+        public List<DtoSaidaList> ListProdutosSaida()
+        {
+            Context db = new Context();
+
+            List<DtoSaidaList> result = (from e in db.saida
+                                           select new DtoSaidaList
+                                           {
+                                               idproduto = e.idproduto,
+                                               qtevenda = e.qtevenda,
+                                               dtvenda = e.dtvenda,
+                                               vlrcustoproduto = e.vlrcustoproduto,
+                                               vlrtotalvenda = e.vlrtotalvenda
+                                           }).ToList();
+
+            return result;
+        }
+
     }
 }

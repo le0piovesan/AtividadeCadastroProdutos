@@ -115,6 +115,7 @@
             this.btnSaida.Text = "Saídas";
             this.btnSaida.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaida.UseVisualStyleBackColor = true;
+            this.btnSaida.Click += new System.EventHandler(this.btnSaida_Click);
             // 
             // btnEntrada
             // 
@@ -134,6 +135,7 @@
             this.btnEntrada.Text = "Entradas";
             this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
             // 
             // btnProduto
             // 

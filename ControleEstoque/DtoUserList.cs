@@ -11,7 +11,7 @@ namespace ControleEstoque
    
     public class DtoUserList
     {
-
+        [Key]
         public int id { get; set; }
         public string nome { get; set; }
      

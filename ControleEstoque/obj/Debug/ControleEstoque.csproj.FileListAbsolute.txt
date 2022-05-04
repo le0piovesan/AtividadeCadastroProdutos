@@ -84,3 +84,6 @@ C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Deb
 C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.exe
 C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.pdb
 C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.FrmAlert.resources
+C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.FrmEntrada.resources
+C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.FrmConsulta.resources
+C:\Users\leona\TADS\Programação Visual\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.FrmSaida.resources
